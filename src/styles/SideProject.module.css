@@ -1,0 +1,18 @@
+@charset "utf-8";
+.wrap{display:flex;gap:10rem;justify-content:center;align-items:center;padding:18rem 0 15rem;background:url(./../assets/images/bg_clouds.jpg) center bottom;background-attachment:fixed;}
+.wrap ul{display:flex;flex-direction:column;min-width:20%;gap:3rem;}
+.wrap ul li span{font-size:2rem;color:var(--point_color);font-weight:bold;letter-spacing:-.1rem;}
+.wrap ul ul{display:inline-block;margin-left:3rem;}
+.wrap ul ul li{display:inline-block;margin-right:5px;padding:.2rem .8rem;border-radius:1.5rem;background-color:var(--point_color);font-size:1.6rem;font-weight:300;color:#fff;}
+.wrap ul ul > li:last-child{margin:0;}
+
+.wrap > div{position:relative;width:500px;height:auto;font-size:0;}
+.wrap > div::before{position:absolute;display:block;content:"";z-index:1;top:-6px;left:-6px;width:100%;height:100%;border:6px solid #fbfbfb;border-radius:20px;box-shadow:0 0 10px #0000003b;}
+.wrap > div img{width:100%;height:100%;object-fit:cover;}
+
+.wrap li div{position:relative;overflow:hidden;}
+.wrap h4,
+.wrap h4 + p{font-size:5rem;font-weight:700;transition:.3s;-webkit-text-stroke:1px var(--point_color);color:transparent;}
+.wrap h4 + p{position:absolute;top:0;left:0;transform:translate(0, 100%);}
+.wrap li:hover h4 + p{transform:translate(0, 0);color:#fff;}
+.wrap li:hover h4{transform:translate(0, -100%);}
