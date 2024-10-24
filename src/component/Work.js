@@ -59,7 +59,7 @@ function Work() {
             description={work.description}
             images={work.images}
             url={work.url}
-            bg={work.bg}
+            thumb={work.thumb}
           />
         ))}
       </ul>

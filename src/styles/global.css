@@ -11,7 +11,7 @@
 a{cursor:pointer;text-decoration:none;}
 button{cursor:pointer;border:none;}
 ol, ul, li{list-style:none;}
-section{min-width:1800px;}
+section{}
 body{background-color:var(--bg_color);}
 
 .bi{font-size:2rem;}
@@ -30,13 +30,9 @@ body{background-color:var(--bg_color);}
   height:55px;
   padding:0 20px 0 30px;
   border-radius:35px;
-  border:1px solid #ccc;
+  border:2px solid #fff;
   overflow:hidden;
   position:relative;
-}
-
-.btn_arrow:hover {
-  border-color:red;
 }
 
 .btn_arrow:before,
@@ -50,7 +46,6 @@ body{background-color:var(--bg_color);}
   border-radius:35px;
   transition:width 0.3s;
 }
-
 .btn_arrow:hover:before,
 .btn_arrow:hover:after {
   width:100%;
@@ -58,11 +53,11 @@ body{background-color:var(--bg_color);}
 
 .btn_arrow:before,
 .btn_arrow:hover em {
-  background:pink;
+  background:#e86e00;
 }
 
 .btn_arrow:after {
-  background:yellowgreen;
+  background:#fff;
 }
 
 .btn_arrow:hover:after {
@@ -70,7 +65,7 @@ body{background-color:var(--bg_color);}
 }
 
 .btn_arrow:hover span {
-  color:#333;
+  color:#fff;
 }
 
 .btn_arrow span {
@@ -78,8 +73,10 @@ body{background-color:var(--bg_color);}
   align-items:center;
   justify-content:center;
   font-size:2rem;
-  color:skyblue;
   z-index:5;
+  mix-blend-mode: difference;
+  color: #fff;
+  font-weight: 300;
 }
 
 .btn_arrow em {
@@ -90,7 +87,7 @@ body{background-color:var(--bg_color);}
   height:30px;
   margin-left:18px;
   border-radius:100%;
-  background:midnightblue;
+  background:#fff;
   background-size:auto 13px;
   font-size:0;
   overflow:hidden;
@@ -130,24 +127,9 @@ body{background-color:var(--bg_color);}
 }
 
 
-.test{
-  position:absolute;
-  top:-5rem;
-  height:calc(100% - 70rem) !important;
-}
-
-.test p{
-  white-space:pre;
-  font-size:10rem;
-  letter-spacing:normal;
-  font-weight:700;
-}
-  .test p:last-child{font-size:4rem;
-    font-weight:500;
-  }
-
-
-
+.more{position:absolute;top:-5rem;height:calc(100% - 70rem) !important;}
+.more p{white-space:pre;font-size:10rem;letter-spacing:normal;font-weight:700;}
+.more p:last-child{font-size:4rem;font-weight:500;}
 
 
 @keyframes marquee {0% {left:0;}100% {left:-2600px;}}
