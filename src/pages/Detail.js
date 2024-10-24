@@ -18,6 +18,7 @@ function Detail() {
         story={work.story}
         images={work.images}
         url={work.url}
+        thumb={work.thumb}
         bg={work.bg}
         period={work.period}
       />

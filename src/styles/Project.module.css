@@ -1,6 +1,70 @@
 @charset "utf-8";
 .wrap{min-height:100vh;text-align:center;}
 
+.title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position:relative;z-index:0;height:100vh;padding:5rem 0 0;overflow:hidden;}
+.title span{font-size:7rem;line-height:15rem;color:#fff;}
+.title span div{font-size:inherit;color:#fff;}
+.title p{font-size:7rem;line-height:9rem;color:#fff;letter-spacing:-0.5rem;align-self: center;}
+.title p div{font-size:inherit;color:#fff;}
+
+
+
+.title h2{position:relative;z-index:1;mix-blend-mode:difference;}
+.title h2 > span{font-size:16.5rem;line-height:15rem;font-weight:500;clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);}
+.title h2 span div{font-size:inherit;line-height:15rem;font-weight:inherit;}
+
+
+.title a{margin-bottom:15vh;}
+.title img{position:absolute;z-index:0;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:cover;filter:brightness(0.8);}
+
+.info{display:flex;justify-content:space-around;gap:2rem;padding:10rem 2vw;text-align:left;}
+.info *{font-size:1.8rem;}
+.info > div{flex:0 1 40%;}
+.info > div:has(img){flex:0 1 100%;}
+.info dl{display:flex;flex-wrap:wrap;margin-bottom:5rem;line-height:3rem;}
+.info dt{float:left;color:#aaa;font-weight:300;}
+.info dl dd::before{content:'·';margin-left:0.3rem;}
+.info dt + dd{margin:0 2.4rem 0 2rem;}
+.info dt + dd + dd{margin-left:-5rem;}
+.info dt + dd:before{display:none;}
+.info h4{padding-bottom:1rem;margin-bottom:1rem;border-bottom:1px solid #aaa;font-size:1.8rem;font-weight:normal;}
+.info li{margin-bottom:5rem;line-height:2.9rem;}
+.info li:last-child{margin-bottom:0;}
+.info li:last-child p{margin-bottom:2rem;}
+.info p{margin-left:.5rem;letter-spacing:-0.08rem;word-spacing:0.15rem;}
+
+
+
+
+
+
+
+
+
+
+.more_wrap{
+  position:relative;
+  display: flex;
+  padding: 10rem 0 35rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10rem;
+  justify-content: space-around;
+  background: #fff;
+}
+
+.more_wrap img{display:inline-block;max-width:70rem;}
+
+
+
+@charset "utf-8";
+.wrap{min-height:100vh;text-align:center;}
+
 
 .info{display:flex;justify-content:space-around;gap:3rem;padding:10rem 35rem;text-align:left;}
 .info *{font-size:1.7rem;}

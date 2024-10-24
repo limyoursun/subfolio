@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 /* css import */
 import style from "./../styles/WorkList.module.css";
 
-function WorkList({ client, nameAbbr, name, description, images, bg }) {
+function WorkList({ client, nameAbbr, name, description, images, thumb }) {
   return (
     <li>
       <div className={style.main}
-        style={{ background: `${bg}` }}
+        style={{ background: `${thumb}` }}
       >
         <span>{client}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{name}</span>
         <div className={`${style.info} info_wrap`}>
