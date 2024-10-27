@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/subfolio/static/css/main.111825b4.css",
-    "main.js": "/subfolio/static/js/main.db14ab70.js",
+    "main.js": "/subfolio/static/js/main.981a2937.js",
     "static/media/NotoSansKR-VariableFont_wght.ttf": "/subfolio/static/media/NotoSansKR-VariableFont_wght.33752a94ca5252213de8.ttf",
     "static/media/bg_portfolio2024.png": "/subfolio/static/media/bg_portfolio2024.d37550c6260c12f47882.png",
     "static/media/Playball-Regular.ttf": "/subfolio/static/media/Playball-Regular.71988dd7eaaef16a92b6.ttf",
@@ -14,10 +14,10 @@
     "static/media/main_arw_more.svg": "/subfolio/static/media/main_arw_more.25ac0e55294caf6b6820.svg",
     "static/media/main_arw_more_wh.svg": "/subfolio/static/media/main_arw_more_wh.dc55eb48ef485a95ea49.svg",
     "main.111825b4.css.map": "/subfolio/static/css/main.111825b4.css.map",
-    "main.db14ab70.js.map": "/subfolio/static/js/main.db14ab70.js.map"
+    "main.981a2937.js.map": "/subfolio/static/js/main.981a2937.js.map"
   },
   "entrypoints": [
     "static/css/main.111825b4.css",
-    "static/js/main.db14ab70.js"
+    "static/js/main.981a2937.js"
   ]
 }
