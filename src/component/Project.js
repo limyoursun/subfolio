@@ -6,7 +6,7 @@ import SplitType from "split-type";
 import style from "./../styles/Project.module.css";
 gsap.registerPlugin(ScrollTrigger, SplitType);
 
-const baseUrl = "https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio";
+const baseUrl = "https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/";
 function Project({
   nameAbbr,
   bg,
