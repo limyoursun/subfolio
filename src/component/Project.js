@@ -25,6 +25,39 @@ function Project({
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
+    
+    const ourText = new SplitType("span.tit", { types: "chars" });
+    const chars = ourText.chars;
+    gsap.fromTo(
+      chars,
+      { y: 200, opacity: 0 },
+      { y: 0, opacity: 1, stagger: 0.03, duration: 1, ease: "power4.out" }
+    );
+    gsap.fromTo(
+      ".img_tit",
+      { width: "0", height: "0" },
+      {
+        width: "100%",
+        height: "100%",
+        duration: 1.3,
+        delay: 0.2,
+        ease: "back.inOut",
+      }
+    );
+
+    gsap.fromTo(
+      ".title_info > *",
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 1.3,
+        delay: 0.7,
+        ease: "power4.inOut",
+      }
+    );
+    
     const checkImagesLoaded = () => {
       const imageElements = document.querySelectorAll('.detail img');
       const allLoaded = Array.from(imageElements).every(img => img.complete);
@@ -72,37 +105,6 @@ function Project({
         },
       });
 
-      const ourText = new SplitType("span.tit", { types: "chars" });
-      const chars = ourText.chars;
-      gsap.fromTo(
-        chars,
-        { y: 200, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.03, duration: 1, ease: "power4.out" }
-      );
-      gsap.fromTo(
-        ".img_tit",
-        { width: "0", height: "0" },
-        {
-          width: "100%",
-          height: "100%",
-          duration: 1.3,
-          delay: 0.2,
-          ease: "back.inOut",
-        }
-      );
-
-      gsap.fromTo(
-        ".title_info > *",
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 1.3,
-          delay: 0.7,
-          ease: "power4.inOut",
-        }
-      );
     }
 
     return () => {
