@@ -58,6 +58,6 @@ body{background-color:var(--bg_color);}
 .flow div {display:flex;position:relative;width:5200px;animation:marquee 18s linear infinite;}
 .flow div span {width:2600px;font-size:18.5rem;white-space:pre;font-weight:800;background:linear-gradient(180deg, rgb(87, 169, 207) 0%, rgba(255, 255, 255, 1) 75%);color:transparent;-webkit-background-clip:text;word-spacing:2rem;letter-spacing:-0.8rem;}
 
-.screen_pin{position:absolute;top:-5rem;height:calc(100% - 70rem) !important;}
+.screen_pin{position:absolute;z-index:1;top:-5rem;height:calc(100% - 70rem) !important;}
 .screen_pin p{white-space:pre;font-size:10rem;letter-spacing:normal;font-weight:700;}
 .screen_pin p:last-child{font-size:4rem;font-weight:500;}

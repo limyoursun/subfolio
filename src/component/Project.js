@@ -49,7 +49,7 @@ function Project({
       gsap.to(".info_l", {
         scrollTrigger: {
           trigger: ".info_l",
-          start: `${top_centered(15)} top`,
+          start: `${top_centered(18)} top`,
           end: "bottom bottom",
           scrub: 0.7,
           pin: true,
@@ -61,7 +61,14 @@ function Project({
           start: `${top_centered(40)} center`,
           pin: true,
           scrub: 0.7,
-          markers: true,
+          onEnter: () => {
+            gsap.to(".screen_pin p", { "color": "#fff" });
+            gsap.to(".screen>img:first-of-type", {"background":`${bg[1]}`, "transform":"scale(1.01)" });
+          },
+          onLeaveBack: () => {
+            gsap.to(".screen_pin p", { "color": "transparent" });
+            gsap.to(".screen>img:first-of-type", {"background":"#fff", "transform":"scale(1)" });
+          },
         },
       });
 
@@ -157,28 +164,39 @@ function Project({
           </ol>
         </div>
         <div>
-          <img src={`${baseUrl}img_${nameAbbr}_1.png`} alt={images[0][1]} />
-          {images.slice(3, 5).map((img, index) => img[0] && (
-            <img key={index} src={`${baseUrl}img_${nameAbbr}_detail_${index + 1}.png`} alt={img[1]} />
+          {images.slice(3, 6).map((img, index) => img[0] && (
+            <img key={index} src={`${baseUrl}img_${nameAbbr}_${index + 1}.gif`} alt={img[1]} />
           ))}
+
         </div>
       </div>
-      <div className={`${style.screen}`}>
+      <div className={`${style.screen} screen`}>
         <div className="screen_pin">
           <div>
             <p>TO GET MORE Information</p>
             <p>프로젝트의 더 다양한 페이지 디자인을 확인하세요</p>
           </div>
         </div>
-        {images.slice(5, 9).map((img, index) => img[0] && (
-          <img key={index}
-            src={`${baseUrl}img_${nameAbbr}_more_${index + 1}.png`}
-            alt={img[1]}
-          />
+        <img src={`${baseUrl}img_${nameAbbr}_more.png`} alt={`${name}의 스크린샷으로 구성된 미리보기 이미지이다.`}/>
+        <ul className={style.screen_wrap} style={{ "background": `${bg[0]}`}}>
+          <li><img src={`${baseUrl}img_${nameAbbr}_1.png`} alt={images[0][1]}/></li>
+        {images.slice(6, 9).map((img, index) => img[0] && (
+          <li>
+            <img key={index} src={`${baseUrl}img_${nameAbbr}_detail_${index + 1}.png`} alt={img[1]} />
+          </li>
         ))}
+        </ul>
       </div>
     </section>
   );
 }
 
 export default Project;
+
+
+// {images.slice(6, 9).map((img, index) => img[0] && (
+//   <img key={index}
+//     src={`${baseUrl}img_${nameAbbr}_more_${index + 1}.png`}
+//     alt={img[1]}
+//   />
+// ))}
