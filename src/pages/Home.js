@@ -7,17 +7,17 @@ import Side from "../component/Side";
 function Home() {
   return (
     <>
-        <Main />
-        <Introduce/>
-        <Work />
-        <div className="flow">
-          <div>
-            <span>TO GET MORE Side PROJECT</span>
-            <span>TO GET MORE Side PROJECT</span>
-          </div>
+      <Main />
+      <Introduce/>
+      <Work />
+      <div className="flow">
+        <div>
+          <span>TO GET MORE Side PROJECT</span>
+          <span>TO GET MORE Side PROJECT</span>
         </div>
-        <Side/>
-        <Cv/>
+      </div>
+      <Side/>
+      <Cv/>
     </>
   );
 }

@@ -7,7 +7,6 @@ import WorkList from "../component/WorkList";
 
 /* css import */
 import style from "./../styles/Work.module.css";
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Work() {
@@ -18,7 +17,7 @@ function Work() {
       scrollTrigger: {
         trigger: "#workWrap",
         start: "top 80%",
-        onEnter: () => gsap.to("#workWrap li > div", {margin: "12rem 20rem 7rem", borderRadius: "2rem", duration: .5,}),
+        onEnter: () => gsap.to("#workWrap li > div", {margin: "10rem 20rem 7rem", borderRadius: "2rem", duration: .5,}),
         onLeaveBack: () => gsap.to("#workWrap li > div", {margin: "0", borderRadius: "0", duration: .5,}),
       },
     });
@@ -59,7 +58,7 @@ function Work() {
             description={work.description}
             images={work.images}
             url={work.url}
-            thumb={work.thumb}
+            bg={work.bg}
           />
         ))}
       </ul>

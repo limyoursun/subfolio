@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import style from "./../styles/SideProject.module.css";
-
-function Side({name, nameAbbr, category, period}) {
+function Side({name, nameAbbr, keyword, period, images, onHover}) {
   return (
-    <li>
+    <li
+      onMouseEnter={() => onHover(nameAbbr, images[1])}
+      onMouseLeave={() => onHover(null)}>
+
       <Link to={`work/${nameAbbr}`}>
         <span>{period}</span>
         <ul>
-          {category.map((category) => 
-              <li>&nbsp;{category}</li>
+          {keyword.map((keyword, index) => 
+              <li key={index}>&nbsp;{keyword}</li>
             )}
         </ul>
         <div>

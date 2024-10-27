@@ -4,25 +4,25 @@ import Project from "../component/Project";
 
 function Detail() {
   const {id} = useParams();
-
   return (
     <>
-    {Data.filter((selId) =>selId.nameAbbr === id)
-    .map((work) => (
-      <Project
-        client={work.client}
-        nameAbbr={work.nameAbbr}
-        name={work.name}
-        duties={work.duties}
-        category={work.category}
-        story={work.story}
-        images={work.images}
-        url={work.url}
-        thumb={work.thumb}
-        bg={work.bg}
-        period={work.period}
-      />
-    ))}
+      {Data.filter((selId) =>selId.nameAbbr === id)
+      .map((work) => (
+        <Project
+          nameAbbr={work.nameAbbr}
+          bg={work.bg}
+          summary={work.summary}
+          client={work.client}
+          period={work.period}
+          keyword={work.keyword}
+          name={work.name}
+          url={work.url}
+          duties={work.duties}
+          story={work.story}
+          images={work.images}
+          detail={work.detail}
+        />
+      ))}
     </>
   );
 }

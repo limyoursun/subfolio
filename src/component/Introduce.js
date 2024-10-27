@@ -12,7 +12,7 @@ function Introduce() {
       scrollTrigger: {
         trigger: "#Main",
         start: "top top",
-        onEnter: () => gsap.to(".intro", { y: -50, duration: 0.5 }),
+        onEnter: () => gsap.to(".intro", { y: -185, duration: 0.5 }),
         onLeaveBack: () => gsap.to(".intro", { y: 0, duration: 0.2 }),
       },
     });
@@ -29,11 +29,11 @@ function Introduce() {
     <section className={style.wrap}>
       <div className="intro">
         <p className="intro_text">안녕하세요!</p>
-        <p>디테일을 사랑하고 창의적인 웹을 만드는</p>
-        <p>퍼블리셔 임선입니다.</p><br/>
-        <p>작은 디테일의 차이를 좋아하며, </p>
-        <p>기록을 통해 더 나은 결과를 만들어가요.</p>
-        <p>멋진 협업으로 함께 성장하는 즐거움을 느끼고 있습니다!</p>
+        <p>3년차 퍼블리셔 임선입니다.</p><br/>
+        <p>웹 접근성, 시멘틱 마크업 프로젝트 경험이 많지만,</p>
+        <p>재미있는 웹을 보면 주책맞게 두근대는 심장💘을 가진 하이브리드 퍼블리셔입니다.</p><br/>
+        <p>기록하는 일에 즐거움을 느끼며, 기록을 바탕으로 나은 결과를 만들고자 항상 노력합니다.</p>
+        <p>멋진 협업으로 함께 성장하는 즐거움을 느끼고 싶습니다!</p>
       </div>
     </section>
   );
