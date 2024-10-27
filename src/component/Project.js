@@ -4,10 +4,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import style from "./../styles/Project.module.css";
-
-const baseUrl = process.env.REACT_APP_IMAGE_URL;
 gsap.registerPlugin(ScrollTrigger, SplitType);
 
+const baseUrl = "https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio";
 function Project({
   nameAbbr,
   bg,

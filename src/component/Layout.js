@@ -13,7 +13,7 @@ function Layout() {
       <ScrollToTop />
       <main>
         <Routes>
-          <Route path={`/`} element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="work/:id" element={<Detail />} />
         </Routes>
       </main>
