@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import img_bg from "../assets/images/img_portfolio2024_1.png";
-import bg_img from "../assets/images/bg_portfolio2024.png";
 
+// import component
 import Data from "../data/project.json";
 import SideList from "../component/SideList";
 
+// import style
 import style from "./../styles/SideProject.module.css";
+
+// import image
+import img_bg from "../assets/images/img_portfolio2024_1.png";
+import bg_img from "../assets/images/bg_portfolio2024.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,12 +38,11 @@ function Side() {
 
   return (
     <section className={style.wrap} style={{"backgroundImage" : currentNameAbbr ? `url(https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/bg_${currentNameAbbr}.png)` : `url(${bg_img})`, "backgroundRepeat":"no-repeat", "backgroundSize":"cover"}}>
-      <div>
-        <img src={ currentNameAbbr ? `https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/img_${currentNameAbbr}_1.png` : img_bg} alt={ currentImageAlt ? `${currentImageAlt}` : "사이드 프로젝트의 미리보기 화면입니다. 사이드 프로젝트 리스트 hover or active시 미리보기 화면이 해당 프로젝트의 프리뷰 화면으로 전환됩니다."}/>
-      </div>
+      <div><img src={ currentNameAbbr ? `https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/img_${currentNameAbbr}_1.png` : img_bg} alt={ currentImageAlt ? `${currentImageAlt}` : "사이드 프로젝트의 미리보기 화면입니다. 사이드 프로젝트 리스트 hover or active시 미리보기 화면이 해당 프로젝트의 프리뷰 화면으로 전환됩니다."}/></div>
       <ul>
         {Data.filter((work) => work.type === "side").map((work) => (
           <SideList
+            key={work.nameAbbr}
             nameAbbr={work.nameAbbr}
             period={work.period}
             keyword={work.keyword}

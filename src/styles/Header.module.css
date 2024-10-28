@@ -11,3 +11,12 @@
 .wrap li p{position:absolute;top:4.5rem;left:-10px;padding:.7rem 1rem;border:1px dashed #ff7700;background-color:#ffffffc9;border-radius:10px;font-size:1.5rem;font-weight:400;line-height:1;white-space:pre;color:#ff7700;transition:.3s;opacity:0;}
 .wrap > p{letter-spacing:normal;word-spacing:0.2rem;}
 .mail span{font-size:0;}
+
+@media screen and (max-width: 767px) { /* Mobile */
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) { /* Tablet  */
+}
+
+@media all and (max-width: 1024px) { /* Mobile & Tablet  */
+}

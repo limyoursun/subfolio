@@ -12,12 +12,13 @@
 a{cursor:pointer;text-decoration:none;}
 button{cursor:pointer;border:none;}
 ol, ul, li{list-style:none;}
-section{}
 body{background-color:var(--bg_color);}
 
-.bi{font-size:2rem;}
+/* common */
 .hidden{position:absolute;left:-9999px;}
-.point{font-family:"Playball", cursive !important;-webkit-text-stroke:1px var(--main_color) !important;}
+.font_point{font-family:"Playball", cursive !important;-webkit-text-stroke:1px var(--main_color) !important;}
+.pc_con{display:block !important;}
+.m_con{display:none !important;}
 
 /* button */
 .btn_top{position:fixed;z-index:9999;right:3rem;bottom:3rem;width:80px;height:80px;background:url(../assets/images/bg_top.png);background-size:cover;font-size:1.5rem;line-height:3.5rem;text-align:center;font-size:0;}
@@ -47,17 +48,36 @@ body{background-color:var(--bg_color);}
 .btn_arrow:hover em:after {top:50%;left:50%;}
 
 /* animation */
-/* main swiper */
 .swiper {width:300px;height:300px;margin:0 2rem;transform:translateY(10%) rotate(-10deg)}
-.swiper-slide {position:relative;z-index:1;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:#fff;
-  -webkit-clip-path:polygon(50% 0%, 66% 26%, 98% 35%, 80% 59%, 79% 91%, 51% 78%, 21% 91%, 21% 57%, 2% 35%, 36% 26%);
-  clip-path:polygon(50% 0%, 66% 26%, 98% 35%, 80% 59%, 79% 91%, 51% 78%, 21% 91%, 21% 57%, 2% 35%, 36% 26%);
-}
+.swiper-slide {position:relative;z-index:1;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:#fff;-webkit-clip-path:polygon(50% 0%, 66% 26%, 98% 35%, 80% 59%, 79% 91%, 51% 78%, 21% 91%, 21% 57%, 2% 35%, 36% 26%);clip-path:polygon(50% 0%, 66% 26%, 98% 35%, 80% 59%, 79% 91%, 51% 78%, 21% 91%, 21% 57%, 2% 35%, 36% 26%);}
 @keyframes marquee {0% {left:0;}100% {left:-2600px;}}
 .flow {position:relative;width:100%;margin-bottom:-5rem;overflow:hidden;}
 .flow div {display:flex;position:relative;width:5200px;animation:marquee 18s linear infinite;}
 .flow div span {width:2600px;font-size:18.5rem;white-space:pre;font-weight:800;background:linear-gradient(180deg, rgb(87, 169, 207) 0%, rgba(255, 255, 255, 1) 75%);color:transparent;-webkit-background-clip:text;word-spacing:2rem;letter-spacing:-0.8rem;}
-
-.screen_pin{position:absolute;z-index:1;top:-5rem;height:calc(100% - 70rem) !important;}
+.screen_pin{position:absolute;z-index:1;top:-5rem;height:calc(100% - 70rem);}
 .screen_pin p{white-space:pre;font-size:10rem;letter-spacing:normal;font-weight:700;}
 .screen_pin p:last-child{font-size:4rem;font-weight:500;}
+
+
+@media screen and (max-width: 767px) { /* Mobile */
+  *{font-size:6px;}
+  .flow{margin-top:15rem;}
+  .screen_pin p{font-size:4rem;}
+  .screen_pin p:last-child{font-size:2.8rem;}
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) { /* Tablet  */
+  *{font-size:8.5px;}
+  .screen_pin p{font-size:4rem;}
+  .screen_pin p:last-child{font-size:2.8rem;}
+}
+
+@media all and (max-width: 1024px) { /* Mobile & Tablet  */
+  .m_con{display:block !important;}
+  .pc_con{display:none !important;}
+  .screen_pin{top:12vh;}
+  .screen_pin p{white-space:initial;color:#fff;text-shadow: 0 0 10px #000000;}
+  .screen_pin p:last-child{font-weight:500;}
+  .btn_arrow{min-width:inherit;height:auto;line-height:4rem;padding:0 2.5rem 0 2.5rem;}
+  .btn_arrow em{display:none;}
+}

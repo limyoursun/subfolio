@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 
+// import style
 import style from "./../styles/Header.module.css";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -36,13 +37,7 @@ function Header() {
     const refreshTime = setInterval(() => {
       const nowdate = new Date();
       document.getElementById("currentInfo").textContent = nowdate.toLocaleString("en", {
-        weekday: "short",
-        month: "short",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      });
+        weekday: "short", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", });
     }, 1000);
 
     // button top
@@ -76,10 +71,7 @@ function Header() {
     <>
       <header className={`${style.wrap} ${isHeaderVisible ? style.visible : style.hidden}`}>
         <ul>
-          <li className="btn_mail">
-            Email
-            <p>클립보드에 복사되었습니다.</p>
-          </li>
+          <li className="btn_mail">Email <p>클립보드에 복사되었습니다.</p></li>
           <li><Link to="https://github.com/limyoursun" target="_blank">Github</Link></li>
           <li><Link to="https://sundefined.tistory.com/" target="_blank">Blog</Link></li>
         </ul>

@@ -1,3 +1,4 @@
+// import component
 import Main from "./../component/Main";
 import Introduce from "./../component/Introduce";
 import Work from "../component/Work";

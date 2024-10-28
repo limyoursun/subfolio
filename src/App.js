@@ -1,4 +1,7 @@
+// import component
 import Layout from "./component/Layout"
+
+// import style
 import "./styles/global.css"
 
 function App() {

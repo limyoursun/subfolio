@@ -1,6 +1,5 @@
 @charset "utf-8";
 .wrap{min-height:100vh;text-align:center;}
-
 .title{position:relative;z-index:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;height:80vh;padding:30rem 4vw 5rem;overflow:hidden;}
 .title *{color:#fff;font-size:1.7rem;}
 .title > div:first-child{position:absolute;z-index:0;bottom:0;left:0;filter:brightness(0.6);opacity:0.7;}
@@ -18,7 +17,6 @@
 .title_info > div:nth-child(1){flex:0 1 40%;}
 .title_info > div:nth-child(2){flex:0 1 60%;align-self:flex-end;}
 .title_info > div:nth-child(2) p{letter-spacing:-0.1rem;}
-
 .info{display:flex;justify-content:space-between;gap:2rem;padding:10rem 12vw;text-align:left;}
 .info *{font-size:1.8rem;}
 .info > div{flex:0 1 35%;}
@@ -29,13 +27,37 @@
 .info li:last-child{margin-bottom:0;}
 .info li:last-child p{margin-bottom:2rem;}
 .info p{margin-left:.5rem;letter-spacing:-0.15rem;word-spacing:0.15rem;color:#555;}
-
 .screen{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-around;background:#fff;overflow:hidden;}
 .screen p{text-shadow:0 0 10px #00000075;}
 .screen img{display:inline-block;}
 .screen>img:first-of-type{width:100%;height:60rem;object-fit:cover;background-size:cover !important;}
-.screen_wrap{display:flex;flex-direction:column;gap:7rem;width:100%;padding:20rem 15rem 60rem;}
+.screen_wrap{display:flex;flex-direction:column;gap:7rem;width:100%;padding:20rem 15rem 30rem;}
 .screen_wrap>li{display:flex;align-items:center;}
 .screen_wrap>li p{width:50rem;font-size:2rem;}
 .screen_wrap>li:nth-child(odd){align-self:flex-start;}
 .screen_wrap>li:nth-child(even){align-self:flex-end;}
+
+@media screen and (max-width:767px) { /* Mobile */
+  .title{padding:15rem 4rem 2rem;}
+  .title h2{margin-bottom:5rem;}
+  .title h2 > span{font-size:4.5rem;}
+  .title_info{display:block;padding:0;}
+  .info{padding:5rem;}
+  .title_info > div:nth-child(1){display:flex;align-items:flex-start;justify-content:space-between;}}
+
+@media all and (min-width:768px) and (max-width:1024px) { /* Tablet  */
+  .title{padding:15rem 5rem 5rem;}
+  .title h2{margin-bottom:5rem;}
+  .title h2 > span{font-size:7rem;}
+  .title_info{padding:0;}
+  .info{padding:2rem;}
+  .info ol{display:flex;gap:2rem;margin:5rem 2rem;}
+  .info ol li{flex:0 1 50%;}
+
+}
+
+@media all and (max-width:1024px) { /* Mobile & Tablet  */
+  .title{height:auto;}
+  .info{flex-direction:column-reverse;gap:0;}
+  .info > div img{min-width:auto;width:100%;max-width:100%;}
+}

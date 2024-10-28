@@ -3,60 +3,22 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
+
+/* style */
 import style from "./../styles/Project.module.css";
 
+const baseUrl = "https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/";
 gsap.registerPlugin(ScrollTrigger, SplitType);
 
-const baseUrl = "https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/";
-
-function Project({
-  nameAbbr,
-  bg,
-  summary,
-  client,
-  period,
-  keyword,
-  name,
-  url,
-  duties,
-  story,
-  images,
-}) {
+function Project({nameAbbr, bg, summary, client, period, keyword, name, url, duties, story, images}) {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
-    
     const ourText = new SplitType("span.tit", { types: "chars" });
     const chars = ourText.chars;
-    gsap.fromTo(
-      chars,
-      { y: 200, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.03, duration: 1, ease: "power4.out" }
-    );
-    gsap.fromTo(
-      ".img_tit",
-      { width: "0", height: "0" },
-      {
-        width: "100%",
-        height: "100%",
-        duration: 1.3,
-        delay: 0.2,
-        ease: "back.inOut",
-      }
-    );
-
-    gsap.fromTo(
-      ".title_info > *",
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 1.3,
-        delay: 0.7,
-        ease: "power4.inOut",
-      }
-    );
+    gsap.fromTo(chars, { y: 200, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.03, duration: 1, ease: "power4.out"});
+    gsap.fromTo(".img_tit", {width: "0", height: "0"},{width: "100%", height: "100%", duration: 1.3, delay: 0.2, ease: "back.inOut"});
+    gsap.fromTo(".title_info > *", {y: 100, opacity: 0}, {y: 0, opacity: 1, stagger: 0.1, duration: 1.3, delay: 0.7, ease: "power4.inOut"});
     
     const checkImagesLoaded = () => {
       const imageElements = document.querySelectorAll('.detail img');
@@ -80,21 +42,10 @@ function Project({
         return "'top " + num + "%'";
       }
       gsap.to(".info_l", {
-        scrollTrigger: {
-          trigger: ".info_l",
-          start: `${top_centered(18)} top`,
-          end: "bottom bottom",
-          scrub: 0.7,
-          pin: true,
-        },
-      });
+        scrollTrigger: {trigger: ".info_l", start: `${top_centered(18)} top`, end: "bottom bottom", scrub: 0.7, pin: true}});
       gsap.to(".screen_pin", {
-        scrollTrigger: {
-          trigger: ".screen_pin",
-          start: `${top_centered(40)} center`,
-          pin: true,
-          scrub: 0.7,
-          onEnter: () => {
+        scrollTrigger: {trigger: ".screen_pin", start: `${top_centered(40)} center`, pin: true, scrub: 0.7,
+        onEnter: () => {
             gsap.to(".screen_pin p", { "color": "#fff" });
             gsap.to(".screen>img:first-of-type", {"background":`${bg[1]}`, "transform":"scale(1.01)" });
           },
@@ -104,9 +55,7 @@ function Project({
           },
         },
       });
-
     }
-
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       ScrollTrigger.refresh();
@@ -115,11 +64,8 @@ function Project({
 
   return (
     <section className={style.wrap}>
-      <div
-        className={style.title}
-        style={{ background: `${bg[1]}`, backgroundSize: "cover" }}
-      >
-        <div className="img_tit" style={{ background: `${bg[0]}` }} />
+      <div className={style.title} style={{background: `${bg[1]}`, backgroundSize: "cover"}}>
+        <div className="img_tit" style={{background: `${bg[0]}`}} aria-hidden="true"></div>
         <h2>
           {name.split("").map((title, index) => (
             <span key={index} className="tit">{title}</span>
@@ -144,12 +90,9 @@ function Project({
               <em aria-hidden="true">이동 화살표</em>
             </Link>
           </div>
-          <div>
-            <p>{summary}</p>
-          </div>
+          <div><p>{summary}</p></div>
         </div>
       </div>
-
       <div className={`${style.info} detail`}>
         <div className="info_l">
           <ol>
@@ -181,7 +124,7 @@ function Project({
         </div>
         <img src={`${baseUrl}img_${nameAbbr}_more.png`} alt={`${name}의 스크린샷으로 구성된 미리보기 이미지이다.`}/>
         <ul className={style.screen_wrap} style={{ "background": `${bg[0]}`}}>
-          <li><img src={`${baseUrl}img_${nameAbbr}_1.png`} alt={images[0][1]}/></li>
+          <li><img key={nameAbbr} src={`${baseUrl}img_${nameAbbr}_1.png`} alt={images[0][1]}/></li>
         {images.slice(6, 9).map((img, index) => img[0] && (
           <li>
             <img key={index} src={`${baseUrl}img_${nameAbbr}_detail_${index + 1}.png`} alt={img[1]} />
@@ -194,11 +137,3 @@ function Project({
 }
 
 export default Project;
-
-
-// {images.slice(6, 9).map((img, index) => img[0] && (
-//   <img key={index}
-//     src={`${baseUrl}img_${nameAbbr}_more_${index + 1}.png`}
-//     alt={img[1]}
-//   />
-// ))}

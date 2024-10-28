@@ -1,5 +1,9 @@
 import { useParams } from "react-router-dom";
+
+// import data
 import Data from "../data/project.json";
+
+// import component
 import Project from "../component/Project";
 
 function Detail() {

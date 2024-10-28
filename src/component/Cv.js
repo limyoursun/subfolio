@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+
+// import style
 import style from "./../styles/Cv.module.css";
 
 gsap.registerPlugin(TextPlugin);
 
 function Cv() {
-  useEffect(() => {
-
-  });
   return (
     <section className={style.wrap}>
       <div>
