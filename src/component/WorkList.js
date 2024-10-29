@@ -23,7 +23,7 @@ function WorkList({ client, nameAbbr, name, description, images, bg }) {
               <img 
                 key={index} 
                 className={`image_${index + 1}`} 
-                src={`https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/img_${nameAbbr}_${index + 1}.png`}
+                src={`https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/img_${nameAbbr}_${index + 1}.webp`}
                 alt={image[1]}
               />
             )

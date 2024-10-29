@@ -5,7 +5,7 @@
   65%, 75% {transform:translateY(-60%);}
   90%, 100% {transform:translateY(-80%);}
 }
-.wrap {position:relative;background:url(../assets/images/bg_portfolio2024.png) center bottom;background-attachment:fixed;box-shadow:inset 0 0 0 1000px #ffffff30;}
+.wrap {position:relative;background:url(../assets/images/bg_portfolio2024.webp) center bottom;background-attachment:fixed;box-shadow:inset 0 0 0 1000px #ffffff30;}
 .wrap > div{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:4rem;padding:15rem 0 10rem;backdrop-filter:blur(5px);}
 .wrap > div > div{display:flex;font-size:3.5rem;line-height:1;}
 

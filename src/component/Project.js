@@ -122,12 +122,12 @@ function Project({nameAbbr, bg, summary, client, period, keyword, name, url, dut
             <p>프로젝트의 더 다양한 페이지 디자인을 확인하세요</p>
           </div>
         </div>
-        <img src={`${baseUrl}img_${nameAbbr}_more.png`} alt={`${name}의 스크린샷으로 구성된 미리보기 이미지이다.`}/>
+        <img src={`${baseUrl}img_${nameAbbr}_more.webp`} alt={`${name}의 스크린샷으로 구성된 미리보기 이미지이다.`}/>
         <ul className={style.screen_wrap} style={{ "background": `${bg[0]}`}}>
-          <li><img key={nameAbbr} src={`${baseUrl}img_${nameAbbr}_1.png`} alt={images[0][1]}/></li>
+          <li><img key={nameAbbr} src={`${baseUrl}img_${nameAbbr}_1.webp`} alt={images[0][1]}/></li>
         {images.slice(6, 9).map((img, index) => img[0] && (
           <li>
-            <img key={index} src={`${baseUrl}img_${nameAbbr}_detail_${index + 1}.png`} alt={img[1]} />
+            <img key={index} src={`${baseUrl}img_${nameAbbr}_detail_${index + 1}.webp`} alt={img[1]} />
           </li>
         ))}
         </ul>

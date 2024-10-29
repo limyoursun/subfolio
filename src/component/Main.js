@@ -10,9 +10,9 @@ import "swiper/css/effect-cards";
 import style from "./../styles/Main.module.css";
 
 // import main image
-import img_main_1 from "../assets/images/img_main_1.jpg";
-import img_main_2 from "../assets/images/img_main_2.jpg";
-import img_main_3 from "../assets/images/img_main_3.jpg";
+import img_main_1 from "../assets/images/img_main_1.webp";
+import img_main_2 from "../assets/images/img_main_2.webp";
+import img_main_3 from "../assets/images/img_main_3.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
