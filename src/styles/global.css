@@ -61,13 +61,16 @@ body{background-color:var(--bg_color);}
 
 @media screen and (max-width: 767px) { /* Mobile */
   *{font-size:6px;}
+  .btn_top{right:0;bottom:0;}
   .flow{margin-top:15rem;}
   .screen_pin p{font-size:4rem;}
   .screen_pin p:last-child{font-size:2.8rem;}
+  .btn_arrow span {padding:1.2rem;font-size:2.5rem;}
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) { /* Tablet  */
   *{font-size:8.5px;}
+  .btn_top{right:2.2rem;bottom:2.2rem;}
   .screen_pin p{font-size:4rem;}
   .screen_pin p:last-child{font-size:2.8rem;}
 }
