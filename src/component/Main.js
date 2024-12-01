@@ -60,7 +60,7 @@ function Main() {
         scrollTrigger: {
           trigger: "#Main",
           start: "top top",
-          onEnter: () => gsap.to("h1 > div", {rotate: 10, x: 40, y: 100, duration: 0.5, delay: 0.1}),
+          onEnter: () => gsap.to("h1 > div", {rotate: 10, x: 40, y: 50, duration: 0.5, delay: 0.1}),
           onLeaveBack: () => gsap.to("h1 > div", {rotate: 0, x: 0, y: 0, duration: 0.5}),
         },
       });

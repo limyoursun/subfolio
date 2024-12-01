@@ -38,7 +38,7 @@ body{background-color:var(--bg_color);}
 .btn_arrow:after {background:#fff;}
 .btn_arrow:hover:after {transition-delay:0.1s;}
 .btn_arrow:hover span {color:#333;font-weight:400;}
-.btn_arrow span {display:flex;align-items:center;justify-content:center;font-size:2rem;z-index:5;font-weight:300;}
+.btn_arrow span {display:flex;align-items:center;justify-content:center;font-size:1.1vw;z-index:5;font-weight:300;}
 .btn_arrow em {position:relative;z-index:3;display:inline-block;width:30px;height:30px;margin-left:18px;border-radius:100%;background:#fff;background-size:auto 13px;font-size:0;overflow:hidden;}
 .btn_arrow em:before,
 .btn_arrow em::after {position:absolute;width:100%;height:13px;content:"";transform:translate(-50%, -50%);background-size:auto 100%;transition:all 0.3s;}
@@ -48,7 +48,7 @@ body{background-color:var(--bg_color);}
 .btn_arrow:hover em:after {top:50%;left:50%;}
 
 /* animation */
-.swiper {width:300px;height:300px;margin:0 2rem;transform:translateY(10%) rotate(-10deg)}
+.swiper {width:19vw;height:19vw;margin:0 2rem;transform:translateY(10%) rotate(-10deg)}
 .swiper-slide {position:relative;z-index:1;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:#fff;-webkit-clip-path:polygon(50% 0%, 66% 26%, 98% 35%, 80% 59%, 79% 91%, 51% 78%, 21% 91%, 21% 57%, 2% 35%, 36% 26%);clip-path:polygon(50% 0%, 66% 26%, 98% 35%, 80% 59%, 79% 91%, 51% 78%, 21% 91%, 21% 57%, 2% 35%, 36% 26%);}
 @keyframes marquee {0% {left:0;}100% {left:-2600px;}}
 .flow {position:relative;width:100%;margin-bottom:-5rem;overflow:hidden;}
@@ -75,6 +75,7 @@ body{background-color:var(--bg_color);}
 @media all and (max-width: 1024px) { /* Mobile & Tablet  */
   .m_con{display:block !important;}
   .pc_con{display:none !important;}
+  .swiper {width:55vw;height:55vw;}
   .screen_pin{top:12vh;}
   .screen_pin p{white-space:initial;color:#fff;text-shadow: 0 0 10px #000000;}
   .screen_pin p:last-child{font-weight:500;}

@@ -18,8 +18,8 @@ function Work() {
         scrollTrigger: {
           trigger: "#workWrap",
           start: "top 80%",
-          onEnter: () => gsap.to("#workWrap li > div", {margin: "10rem 20rem 7rem", borderRadius: "2rem", duration: .5,}),
-          onLeaveBack: () => gsap.to("#workWrap li > div", {margin: "0", borderRadius: "0", duration: .5,}),
+          onEnter: () => gsap.to("#workWrap li > div", {width:"75%", margin: "10rem auto 7rem", borderRadius: "2rem", duration: .5,}),
+          onLeaveBack: () => gsap.to("#workWrap li > div", {width:"100%", borderRadius: "0", duration: .5,}),
         }
       });
       gsap.set(".image_2", {position: "absolute", opacity: "0", left: 0, top: "40%",});
