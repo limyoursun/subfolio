@@ -42,7 +42,7 @@ function Project({nameAbbr, bg, summary, client, period, keyword, name, url, dut
         return "'top " + num + "%'";
       }
       gsap.to(".info_l", {
-        scrollTrigger: {trigger: ".info_l", start: `${top_centered(18)} top`, end: "bottom bottom", scrub: 0.7, pin: true}});
+        scrollTrigger: {trigger: ".info_l", start: `${top_centered(13)} top`, end: "bottom bottom", scrub: 0.7, pin: true}});
       gsap.to(".screen_pin", {
         scrollTrigger: {trigger: ".screen_pin", start: `${top_centered(40)} center`, pin: true, scrub: 0.7,
         onEnter: () => {
