@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Introduce() {
   useEffect(() => {
+    const matchMedia = gsap.matchMedia();
       gsap.matchMedia().add("(min-width: 1025px)", () => {
         gsap.from(".intro", {
           duration: 0.1,
@@ -23,12 +24,13 @@ function Introduce() {
           scrollTrigger: {
             trigger: "#Main",
             start: "top top",
-            onEnter: () => gsap.to(".intro_text", { text: "반갑습니다!", delay: .5, duration: 1}),
-            onLeaveBack: () => gsap.to(".intro_text", { text: "안녕하세요!", delay: .5, duration: 1})
+            onEnter: () => gsap.to(".intro_text", { text: "반갑습니다!", delay: .5, duration: 1, stagger: 0.2}),
+            onLeaveBack: () => gsap.to(".intro_text", { text: "안녕하세요!", delay: .5, duration: 1, stagger: 0.2})
           },
         });
       })
-    })
+      return () => matchMedia.revert();
+    }, [])
   return (
     <section className={style.wrap}>
       <div className="intro">

@@ -16,8 +16,8 @@ import bg_img from "../assets/images/bg_portfolio2024.webp";
 gsap.registerPlugin(ScrollTrigger);
 
 function Side() {
-  const [currentNameAbbr, setCurrentNameAbbr] = useState(null);
-  const [currentImageAlt, setCurrentImageAlt] = useState(null);
+  const [currentNameAbbr, setCurrentNameAbbr] = useState("");
+  const [currentImageAlt, setCurrentImageAlt] = useState("");
 
   useEffect(() => {
     const h4Elements = document.querySelectorAll("h4");
@@ -37,8 +37,8 @@ function Side() {
   };
 
   return (
-    <section className={style.wrap} style={{"backgroundImage" : currentNameAbbr ? `url(https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/bg_${currentNameAbbr}.webp)` : `url(${bg_img})`, "backgroundRepeat":"no-repeat", "backgroundSize":"cover"}}>
-      <div><img src={ currentNameAbbr ? `https://raw.githubusercontent.com/limyoursun/limyoursun.github.io/refs/heads/main/subtfolio/img_${currentNameAbbr}_1.webp` : img_bg} alt={ currentImageAlt ? `${currentImageAlt}` : "사이드 프로젝트의 미리보기 화면입니다. 사이드 프로젝트 리스트 hover or active시 미리보기 화면이 해당 프로젝트의 프리뷰 화면으로 전환됩니다."}/></div>
+    <section className={style.wrap} style={{"backgroundImage" : currentNameAbbr ? `url(https://raw.githubusercontent.com/limyoursun/limyoursun/refs/heads/main/subtfolio/bg_${currentNameAbbr}.webp)` : `url(${bg_img})`, "backgroundRepeat":"no-repeat", "backgroundSize":"cover"}}>
+      <div><img src={ currentNameAbbr ? `https://raw.githubusercontent.com/limyoursun/limyoursun/refs/heads/main/subtfolio/img_${currentNameAbbr}_1.webp` : img_bg} alt={ currentImageAlt ? `${currentImageAlt}` : "사이드 프로젝트의 미리보기 화면입니다. 사이드 프로젝트 리스트 hover or active시 미리보기 화면이 해당 프로젝트의 프리뷰 화면으로 전환됩니다."}/></div>
       <ul>
         {Data.filter((work) => work.type === "side").map((work) => (
           <SideList
