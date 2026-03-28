@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -7,7 +7,7 @@ import Data from "../data/project.json";
 import SideList from "../component/SideList";
 
 // import style
-import style from "./../styles/SideProject.module.css";
+import style from "./Side.module.css";
 
 // import image
 import img_bg from "../assets/images/img_portfolio2024_1.webp";
@@ -18,18 +18,6 @@ gsap.registerPlugin(ScrollTrigger);
 function Side() {
   const [currentNameAbbr, setCurrentNameAbbr] = useState("");
   const [currentImageAlt, setCurrentImageAlt] = useState("");
-
-  useEffect(() => {
-    const h4Elements = document.querySelectorAll("h4");
-    h4Elements.forEach((h4) => {
-      if (!h4.nextElementSibling) {
-        const h4Copy = document.createElement("p");
-        h4Copy.setAttribute("aria-hidden", "true");
-        h4Copy.textContent = h4.textContent;
-        h4.insertAdjacentElement("afterend", h4Copy);
-      }
-    });
-  }, []);
 
   const handleHover = (nameAbbr, images) => {
     setCurrentNameAbbr(nameAbbr);

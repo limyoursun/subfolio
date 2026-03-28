@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -7,11 +7,13 @@ import Data from "../data/project.json";
 import WorkList from "../component/WorkList";
 
 // import style
-import style from "./../styles/Work.module.css";
+import style from "./Work.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Work() {
+  const workRef = useRef(null);
+
   useEffect(() => {
     gsap.matchMedia().add("(min-width: 1025px)", () => {
       gsap.to(".cv_text", {duration: 2, delay: 2,
@@ -26,7 +28,7 @@ function Work() {
       gsap.set(".image_3", {position: "absolute", opacity: "0", right: 0, top: "13%",});
       gsap.set(".info_wrap", { opacity: "0" });
 
-      document.querySelectorAll(".image_1").forEach((mainImage) => {
+      workRef.current.querySelectorAll(".image_1").forEach((mainImage) => {
         const info = mainImage.closest("li").querySelector(".info_wrap");
         const subImage = mainImage.closest("li").querySelector(".image_2");
         const thridImage = mainImage.closest("li").querySelector(".image_3");
@@ -47,7 +49,7 @@ function Work() {
   }, []);
 
   return (
-    <section id="workWrap" className={style.wrap}>
+    <section ref={workRef} id="workWrap" className={style.wrap}>
       <ul>
         {Data.filter((work) => work.type === "work").map((work) => (
           <WorkList

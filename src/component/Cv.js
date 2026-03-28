@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
 // import style
-import style from "./../styles/Cv.module.css";
+import style from "./Cv.module.css";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -25,7 +25,13 @@ function Cv() {
           </div>
           정보가 궁금하신가요?
         </div>
-        <Link className="btn_arrow" to="https://www.rallit.com/resumes/270797@limyoursun/%EC%9E%84%EC%84%A0" target="_blank" rel="noopener noreferrer" aria-label="경력기술서 및 이력서 페이지로 이동">
+        <Link
+          className="btn_arrow"
+          to="https://www.rallit.com/resumes/270797@limyoursun/%EC%9E%84%EC%84%A0"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="경력기술서 및 이력서 페이지로 이동"
+        >
           <span>경력기술서 / 이력서로 이동</span>
           <em aria-hidden="true">이동 화살표</em>
         </Link>

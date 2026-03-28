@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 
 // import style
-import style from "./../styles/Main.module.css";
+import style from "./Main.module.css";
 
 // import main image
 import img_main_1 from "../assets/images/img_main_1.webp";
@@ -17,6 +17,8 @@ import img_main_3 from "../assets/images/img_main_3.webp";
 gsap.registerPlugin(ScrollTrigger);
 
 function Main() {
+  const trailRef = useRef(null);
+
   useEffect(() => {
     gsap.matchMedia().add("(min-width: 1025px)", () => {
       gsap.fromTo("h1 > *", {rotateX: 90, duration: 1, stagger: 0.1}, {rotateX: 0, opacity: 1, delay: 0.2, duration: 1, stagger: 0.1});
@@ -67,7 +69,7 @@ function Main() {
     })
 
     // Image Trail
-    const trail = document.querySelector(".trail");
+    const trail = trailRef.current;
     const settings = {isEnabled: false, count: 1, time: 100};
     const images = [
       "mouse/img_main_ (1).png",
@@ -110,12 +112,12 @@ function Main() {
       image.style.left = `${event.clientX - trailRect.left - imageSize * 5}px`;
       image.style.top = `${event.clientY - trailRect.top - imageSize * 5}px`;
       trail.appendChild(image);
-      window.setTimeout(() => (image.style.opacity = "1"), 200);
-      window.setTimeout(() => (image.style.opacity = "0"), 200);
-      window.setTimeout(() => trail.removeChild(image), 2500);
+      setTimeout(() => (image.style.opacity = "1"), 200);
+      setTimeout(() => (image.style.opacity = "0"), 200);
+      setTimeout(() => trail.removeChild(image), 2500);
     };
 
-    window.addEventListener("mousemove", (event) => {
+    const handleMouseMove = (event) => {
       if (!settings.isEnabled) {
         settings.isEnabled = true;
         setTimeout(() => {
@@ -123,16 +125,18 @@ function Main() {
         }, settings.time);
         animateImages(event);
       }
-    });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    preloadImages();
 
-    window.onload = () => {
-      preloadImages();
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   return (
     <section id="Main" className={style.wrap}>
-      <article className="trail"></article>
+      <article ref={trailRef} className="trail"></article>
       <h1>
         <span className="mainL">L</span>
         <span className="mainI">i</span>

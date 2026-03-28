@@ -13,7 +13,7 @@ function Side({name, nameAbbr, keyword, period, images, onHover}) {
             <li key={index}>&nbsp;{keyword}</li>
           )}
         </ul>
-        <div><h4>{name}</h4></div>
+        <div><h4>{name}</h4><p aria-hidden="true">{name}</p></div>
       </Link>
     </li>
   );

@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 /* style */
-import style from "./../styles/Project.module.css";
+import style from "./Project.module.css";
 
 const baseUrl = "https://raw.githubusercontent.com/limyoursun/limyoursun/refs/heads/main/subtfolio/";
 gsap.registerPlugin(ScrollTrigger, SplitType);
 
 function Project({nameAbbr, bg, summary, client, period, keyword, name, url, duties, story, images}) {
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const detailRef = useRef(null);
 
   useEffect(() => {
     const ourText = new SplitType("span.tit", { types: "chars" });
@@ -21,7 +22,7 @@ function Project({nameAbbr, bg, summary, client, period, keyword, name, url, dut
     gsap.fromTo(".title_info > *", {y: 100, opacity: 0}, {y: 0, opacity: 1, stagger: 0.1, duration: 1.3, delay: 0.7, ease: "power4.inOut"});
     
     const checkImagesLoaded = () => {
-      const imageElements = document.querySelectorAll('.detail img');
+      const imageElements = detailRef.current.querySelectorAll('img');
       const allLoaded = Array.from(imageElements).every(img => img.complete);
       return allLoaded;
     };
@@ -85,15 +86,19 @@ function Project({nameAbbr, bg, summary, client, period, keyword, name, url, dut
                 ))}
               </dd>
             </dl>
-            <Link to={url} target="_blank" className="btn_arrow">
-              <span>Go to the Site</span>
-              <em aria-hidden="true">이동 화살표</em>
-            </Link>
+            {url ?
+              <Link to={url} target="_blank" className="btn_arrow">
+                <span>Go to the Site</span>
+                <em aria-hidden="true">이동 화살표</em>
+              </Link>
+            :
+            <></>
+            }
           </div>
           <div><p>{summary}</p></div>
         </div>
       </div>
-      <div className={`${style.info} detail`}>
+      <div ref={detailRef} className={`${style.info} detail`}>
         <div className="info_l">
           <ol>
             <li>
@@ -112,7 +117,6 @@ function Project({nameAbbr, bg, summary, client, period, keyword, name, url, dut
           {images.slice(3, 6).map((img, index) => img[0] && (
             <img key={index} src={`${baseUrl}img_${nameAbbr}_${index + 1}.gif`} alt={img[1]} />
           ))}
-
         </div>
       </div>
       <div className={`${style.screen} screen`}>
@@ -126,8 +130,8 @@ function Project({nameAbbr, bg, summary, client, period, keyword, name, url, dut
         <ul className={style.screen_wrap} style={{ "background": `${bg[0]}`}}>
           <li><img key={nameAbbr} src={`${baseUrl}img_${nameAbbr}_1.webp`} alt={images[0][1]}/></li>
         {images.slice(6, 9).map((img, index) => img[0] && (
-          <li>
-            <img key={index} src={`${baseUrl}img_${nameAbbr}_detail_${index + 1}.webp`} alt={img[1]} />
+          <li key={index}>
+            <img src={`${baseUrl}img_${nameAbbr}_detail_${index + 1}.webp`} alt={img[1]} />
           </li>
         ))}
         </ul>

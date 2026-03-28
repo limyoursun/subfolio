@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // import style
-import style from "./../styles/WorkList.module.css";
+import style from "./WorkList.module.css";
 
 function WorkList({ client, nameAbbr, name, description, images, bg }) {
   return (
